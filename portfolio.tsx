@@ -5,6 +5,7 @@ import { Header } from "@/components/Header"
 import { MobileMenu } from "@/components/MobileMenu"
 import { HeroSection } from "@/components/HeroSection"
 import { AboutSection } from "@/components/AboutSection"
+import { SkillsSection } from "@/components/SkillsSection"
 import { ProjectsSection } from "@/components/ProjectsSection"
 import { EducationSection } from "@/components/EducationSection"
 import { ContactSection } from "@/components/ContactSection"
@@ -37,6 +38,7 @@ export default function Portfolio() {
       <main className="pt-16">
         <HeroSection />
         <AboutSection />
+        <SkillsSection />
         <ProjectsSection />
         <EducationSection />
         <ContactSection />

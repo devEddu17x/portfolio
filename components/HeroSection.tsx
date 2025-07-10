@@ -24,7 +24,7 @@ export function HeroSection() {
                         className="order-2 md:order-1"
                     >
                         <Badge className="mb-4 bg-teal-500/10 text-teal-500 dark:bg-teal-400/10 dark:text-teal-400 hover:bg-teal-500/20 dark:hover:bg-teal-400/20">
-                            Desarrollador Web Junior
+                            Desarrollador Backend
                         </Badge>
                         <h1 className="text-4xl md:text-6xl font-bold mb-4">
                             Hola, soy{" "}
@@ -33,7 +33,7 @@ export function HeroSection() {
                             </span>
                         </h1>
                         <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                            Desarrollador frontend apasionado por crear experiencias web atractivas y funcionales.
+                            Desarrollador backend especializado en crear APIs robustas y sistemas escalables con TypeScript y Java.
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <Button
