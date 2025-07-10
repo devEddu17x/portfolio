@@ -31,9 +31,9 @@ export function Header({
             <div className="container mx-auto px-4 flex justify-between items-center h-16">
                 <div className="flex items-center gap-2">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-indigo-500 flex items-center justify-center text-white font-bold">
-                        TN
+                        E
                     </div>
-                    <span className="font-bold text-xl hidden sm:block">TuNombre</span>
+                    <span className="font-bold text-xl hidden sm:block">Eddu</span>
                 </div>
 
                 {/* Desktop Navigation */}

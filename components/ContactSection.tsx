@@ -33,19 +33,19 @@ export function ContactSection() {
                                         <div className="p-2 rounded-full bg-white/20">
                                             <Mail size={20} />
                                         </div>
-                                        <span>tunombre@ejemplo.com</span>
+                                        <span> eduarjma@gmail.com</span>
                                     </div>
                                     <div className="flex items-center gap-4">
                                         <div className="p-2 rounded-full bg-white/20">
                                             <Github size={20} />
                                         </div>
-                                        <span>github.com/tunombre</span>
+                                        <span>github.com/devEddu17x</span>
                                     </div>
                                     <div className="flex items-center gap-4">
                                         <div className="p-2 rounded-full bg-white/20">
                                             <Linkedin size={20} />
                                         </div>
-                                        <span>linkedin.com/in/tunombre</span>
+                                        <span>linkedin.com/in/eduardodevts</span>
                                     </div>
                                 </div>
 

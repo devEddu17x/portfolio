@@ -11,11 +11,11 @@ export function Footer() {
                         <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-indigo-500 flex items-center justify-center text-white font-bold text-xs">
                             TN
                         </div>
-                        <span className="font-bold">TuNombre</span>
+                        <span className="font-bold">Eddu</span>
                     </div>
 
                     <div className="text-gray-500 dark:text-gray-400 text-sm">
-                        © {new Date().getFullYear()} TuNombre. Todos los derechos reservados.
+                        © {new Date().getFullYear()} Eddu. Todos los derechos reservados.
                     </div>
 
                     <div className="flex gap-4 mt-4 md:mt-0">

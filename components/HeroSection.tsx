@@ -29,11 +29,11 @@ export function HeroSection() {
                         <h1 className="text-4xl md:text-6xl font-bold mb-4">
                             Hola, soy{" "}
                             <span className="bg-gradient-to-r from-teal-500 to-indigo-500 bg-clip-text text-transparent">
-                                TuNombre
+                                Eddu
                             </span>
                         </h1>
                         <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                            Desarrollador backend especializado en crear APIs robustas y sistemas escalables con TypeScript y Java.
+                            Desarrollador backend especializado en crear APIs robustas y sistemas escalables con NestJS.
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <Button
@@ -79,7 +79,7 @@ export function HeroSection() {
                             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-teal-500 to-indigo-500 blur-3xl opacity-20 absolute -inset-4"></div>
                             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-2 border-gray-200 dark:border-gray-800 overflow-hidden relative z-10">
                                 <img
-                                    src="/placeholder.svg?height=400&width=400"
+                                    src="/eddu.jpg?height=400&width=400"
                                     alt="Tu foto"
                                     className="w-full h-full object-cover"
                                 />
