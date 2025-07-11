@@ -33,7 +33,7 @@ export function HeroSection() {
                             </span>
                         </h1>
                         <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                            Desarrollador backend especializado en crear APIs robustas y sistemas escalables con NestJS.
+                            Especializado en crear APIs robustas y sistemas escalables con NestJS.
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <Button
