@@ -76,14 +76,28 @@ export function HeroSection() {
                         className="order-1 md:order-2 flex justify-center"
                     >
                         <div className="relative">
-                            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-teal-500 to-indigo-500 blur-3xl opacity-20 absolute -inset-4"></div>
-                            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-2 border-gray-200 dark:border-gray-800 overflow-hidden relative z-10">
-                                <img
-                                    src="/eddu.jpg?height=400&width=400"
-                                    alt="Tu foto"
-                                    className="w-full h-full object-cover"
-                                />
+                            {/* Fondo con gradiente suave */}
+                            <div className="w-72 h-72 md:w-88 md:h-88 rounded-full bg-gradient-to-br from-teal-500/20 via-indigo-500/20 to-purple-500/20 blur-2xl absolute -inset-8"></div>
+
+                            {/* Anillo decorativo exterior */}
+                            <div className="w-68 h-68 md:w-84 md:h-84 rounded-full border border-teal-500/30 absolute -inset-2 animate-spin" style={{ animationDuration: '20s' }}></div>
+
+                            {/* Contenedor principal con gradiente */}
+                            <div className="relative p-1 rounded-full bg-gradient-to-br from-teal-500 via-indigo-500 to-purple-500">
+                                <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white dark:border-gray-900 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
+                                    <img
+                                        src="/me.png"
+                                        alt="Eddu - Desarrollador Backend"
+                                        className="w-full h-full object-cover hover:scale-110 transition-all duration-500 ease-in-out"
+                                    />
+                                </div>
                             </div>
+                            {/* 
+                            Puntos decorativos
+                            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-teal-400 rounded-full animate-pulse"></div>
+                            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-indigo-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                            <div className="absolute top-1/2 -left-2 transform -translate-y-1/2 w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+                            <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 w-1.5 h-1.5 bg-teal-300 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div> */}
                         </div>
                     </motion.div>
                 </div>
