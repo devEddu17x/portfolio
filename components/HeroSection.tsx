@@ -42,26 +42,29 @@ export function HeroSection() {
                             >
                                 Ver proyectos <ArrowRight className="ml-2 h-4 w-4" />
                             </Button>
-                            <Button variant="outline" className="border-gray-300 dark:border-gray-700">
+                            {/* <Button variant="outline" className="border-gray-300 dark:border-gray-700">
                                 Descargar CV
-                            </Button>
+                            </Button> */}
                         </div>
 
                         <div className="mt-12 flex gap-4">
                             <a
-                                href="#"
+                                href="https://github.com/devEddu17x"
+                                target="_blank" rel="noopener noreferrer"
                                 className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
                             >
                                 <Github size={20} />
                             </a>
                             <a
-                                href="#"
+                                href="https://www.linkedin.com/in/eduardodevts/"
+                                target="_blank" rel="noopener noreferrer"
                                 className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
                             >
                                 <Linkedin size={20} />
                             </a>
                             <a
-                                href="#"
+                                href="mailto:eduarjma@gmail.com?subject=Contacto%20desde%20Portfolio"
+                                target="_blank" rel="noopener noreferrer"
                                 className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
                             >
                                 <Mail size={20} />
