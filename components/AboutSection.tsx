@@ -21,18 +21,19 @@ export function AboutSection() {
                         <div className="md:col-span-2">
                             <h3 className="text-2xl font-semibold mb-4">Mi historia</h3>
                             <p className="text-gray-600 dark:text-gray-300 mb-6">
-                                Soy un desarrollador backend con experiencia en TypeScript, Java y Python. Me especializo en
+                                Soy un desarrollador backend con experiencia en TypeScript. Me especializo en
                                 crear APIs robustas y sistemas escalables utilizando tecnologías como NestJS, TypeORM y bases
                                 de datos relacionales y NoSQL.
                             </p>
                             <p className="text-gray-600 dark:text-gray-300 mb-6">
                                 Mi enfoque se centra en escribir código limpio, implementar mejores prácticas y crear
-                                arquitecturas que puedan crecer con las necesidades del negocio. Tengo experiencia desplegando
-                                aplicaciones en AWS y manejando infraestructura con Docker.
+                                arquitecturas que puedan crecer con las necesidades del negocio. He desplegado en EC2
+                                y uso Docker en todos mis desarrollos para orquestar bases de datos y servicios backend.
                             </p>
                             <p className="text-gray-600 dark:text-gray-300">
-                                Me apasiona resolver problemas complejos y colaborar en equipos multidisciplinarios para
-                                entregar soluciones de alta calidad.
+                                En mis tiempos libres disfruto afinar configuraciones de bases de datos,
+                                ajustar variables en MySQL y experimentar con réplicas para mejorar el rendimiento
+                                y la tolerancia a fallos.
                             </p>
                         </div>
 
