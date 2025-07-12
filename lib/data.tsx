@@ -75,24 +75,24 @@ export const skills = [
 
 export const projects = [
     {
-        title: "E-commerce App",
-        description: "Una aplicación de comercio electrónico con carrito de compras y pasarela de pago.",
+        title: "Lorem App",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, animi voluptate. Aut maiores",
         technologies: ["React", "Node.js", "MongoDB"],
         image: "/placeholder.svg?height=200&width=350",
         github: "#",
         demo: "#",
     },
     {
-        title: "Task Manager",
-        description: "Aplicación para gestionar tareas diarias con funcionalidad de arrastrar y soltar.",
+        title: "Lorem App",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, animi voluptate. Aut maiores ",
         technologies: ["JavaScript", "HTML", "CSS"],
         image: "/placeholder.svg?height=200&width=350",
         github: "#",
         demo: "#",
     },
     {
-        title: "Weather App",
-        description: "Aplicación que muestra el clima actual y pronóstico utilizando una API externa.",
+        title: "Lorem App",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, animi voluptate. Aut maiores ",
         technologies: ["React", "API REST", "Tailwind CSS"],
         image: "/placeholder.svg?height=200&width=350",
         github: "#",
