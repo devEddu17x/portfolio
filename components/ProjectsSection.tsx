@@ -1,7 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { Github, ExternalLink } from "lucide-react"
+import { Github, ExternalLink, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -23,13 +22,7 @@ export function ProjectsSection() {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                        >
+                        <div key={index} className="group">
                             <Card className="overflow-hidden h-full bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow">
                                 <div className="relative">
                                     <img
@@ -37,20 +30,28 @@ export function ProjectsSection() {
                                         alt={project.title}
                                         className="w-full h-48 object-cover"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end justify-between p-4">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-between p-4">
                                         <div className="flex gap-3">
-                                            <a
-                                                href={project.github}
-                                                className="p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
-                                            >
-                                                <Github size={18} className="text-white" />
-                                            </a>
-                                            <a
-                                                href={project.demo}
-                                                className="p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
-                                            >
-                                                <ExternalLink size={18} className="text-white" />
-                                            </a>
+                                            {project.github && (
+                                                <a
+                                                    href={project.github}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
+                                                >
+                                                    <Github size={18} className="text-white" />
+                                                </a>
+                                            )}
+                                            {project.demo && (
+                                                <a
+                                                    href={project.demo}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
+                                                >
+                                                    <ExternalLink size={18} className="text-white" />
+                                                </a>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
@@ -58,9 +59,9 @@ export function ProjectsSection() {
                                     <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                                     <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
                                     <div className="flex flex-wrap gap-2">
-                                        {project.technologies.map((tech) => (
+                                        {project.technologies.map((tech, techIndex) => (
                                             <Badge
-                                                key={tech}
+                                                key={techIndex}
                                                 variant="outline"
                                                 className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-0"
                                             >
@@ -70,13 +71,17 @@ export function ProjectsSection() {
                                     </div>
                                 </CardContent>
                             </Card>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
 
                 <div className="text-center mt-12">
-                    <Button variant="outline" className="border-gray-300 dark:border-gray-700">
-                        Ver más proyectos
+                    <Button
+                        variant="outline"
+                        onClick={() => window.open('https://github.com/devEddu17x', '_blank')}
+                        className="bg-gradient-to-r from-teal-500 to-indigo-500 hover:from-teal-600 hover:to-indigo-600 text-white border-0 px-8 py-3"
+                    >
+                        Ver más proyectos <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                 </div>
             </div>

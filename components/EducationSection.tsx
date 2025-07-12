@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { education } from "@/lib/data"
@@ -19,12 +18,8 @@ export function EducationSection() {
 
                 <div className="max-w-4xl mx-auto">
                     {education.map((item, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
                             className="flex gap-6 mb-12 last:mb-0"
                         >
                             <div className="hidden sm:block pt-1">
@@ -46,7 +41,7 @@ export function EducationSection() {
                                     <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
                                 </CardContent>
                             </Card>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

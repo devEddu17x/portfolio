@@ -13,21 +13,19 @@ export function ThemeToggle() {
         setMounted(true)
     }, [])
 
-    if (!mounted) {
-        return (
-            <Button variant="ghost" size="icon" className="rounded-full">
-                <Sun size={20} />
-            </Button>
-        )
-    }
-
     const toggleTheme = () => {
         setTheme(theme === 'dark' ? 'light' : 'dark')
     }
 
     return (
-        <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+        <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+            className="rounded-full"
+            suppressHydrationWarning
+        >
+            {mounted && theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
         </Button>
     )
 }

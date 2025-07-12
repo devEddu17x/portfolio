@@ -13,7 +13,7 @@ import { ContactSection } from "@/components/ContactSection"
 import { Footer } from "@/components/Footer"
 
 export function PortfolioClient() {
-    const [mounted, setMounted] = useState(false)
+    const [isHydrated, setIsHydrated] = useState(false)
     const {
         activeSection,
         mobileMenuOpen,
@@ -21,18 +21,8 @@ export function PortfolioClient() {
     } = usePortfolio()
 
     useEffect(() => {
-        setMounted(true)
+        setIsHydrated(true)
     }, [])
-
-    if (!mounted) {
-        return (
-            <div className="min-h-screen bg-gray-50 dark:bg-[#0f172a] text-gray-900 dark:text-gray-100 font-sans">
-                <div className="flex items-center justify-center min-h-screen">
-                    <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-teal-500"></div>
-                </div>
-            </div>
-        )
-    }
 
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-[#0f172a] text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
