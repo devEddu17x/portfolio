@@ -20,19 +20,23 @@ export function Footer() {
 
                     <div className="flex gap-4 mt-4 md:mt-0">
                         <a
-                            href="#"
+                            href="https://github.com/devEddu17x"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="text-gray-500 dark:text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
                         >
                             <Github size={18} />
                         </a>
                         <a
-                            href="#"
+                            href="https://linkedin.com/in/eduardodevts"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="text-gray-500 dark:text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
                         >
                             <Linkedin size={18} />
                         </a>
                         <a
-                            href="#"
+                            href="mailto:eduarjma@gmail.com"
                             className="text-gray-500 dark:text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
                         >
                             <Mail size={18} />

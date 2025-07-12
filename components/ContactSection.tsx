@@ -29,24 +29,37 @@ export function ContactSection() {
                                 </p>
 
                                 <div className="space-y-6">
-                                    <div className="flex items-center gap-4">
+                                    <a
+                                        href="mailto:eduarjma@gmail.com"
+                                        className="flex items-center gap-4 hover:bg-white/10 p-2 rounded-lg transition-colors"
+                                    >
                                         <div className="p-2 rounded-full bg-white/20">
                                             <Mail size={20} />
                                         </div>
-                                        <span> eduarjma@gmail.com</span>
-                                    </div>
-                                    <div className="flex items-center gap-4">
+                                        <span>eduarjma@gmail.com</span>
+                                    </a>
+                                    <a
+                                        href="https://github.com/devEddu17x"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-4 hover:bg-white/10 p-2 rounded-lg transition-colors"
+                                    >
                                         <div className="p-2 rounded-full bg-white/20">
                                             <Github size={20} />
                                         </div>
                                         <span>github.com/devEddu17x</span>
-                                    </div>
-                                    <div className="flex items-center gap-4">
+                                    </a>
+                                    <a
+                                        href="https://linkedin.com/in/eduardodevts"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-4 hover:bg-white/10 p-2 rounded-lg transition-colors"
+                                    >
                                         <div className="p-2 rounded-full bg-white/20">
                                             <Linkedin size={20} />
                                         </div>
                                         <span>linkedin.com/in/eduardodevts</span>
-                                    </div>
+                                    </a>
                                 </div>
 
                                 <div className="absolute bottom-8 left-8 right-8 opacity-10">
