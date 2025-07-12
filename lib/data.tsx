@@ -102,21 +102,9 @@ export const projects = [
 
 export const education = [
     {
-        period: "2020 - 2023",
-        title: "Grado en Desarrollo Web",
-        institution: "Universidad Ejemplo",
-        description: "Estudios centrados en desarrollo web, programación y diseño de interfaces.",
-    },
-    {
-        period: "2023",
-        title: "Bootcamp de Desarrollo Frontend",
-        institution: "Academia Código",
-        description: "Formación intensiva en React, JavaScript moderno y desarrollo de aplicaciones web.",
-    },
-    {
         period: "En curso",
-        title: "Certificación en UX/UI Design",
-        institution: "Plataforma Online",
-        description: "Aprendiendo principios de diseño de experiencia de usuario e interfaces.",
-    },
+        title: "Ingenieria de Sistemas e Inteligencia Artificial",
+        institution: "Universidad Privada Antenor Orrego",
+        description: "Formación en desarrollo de software, tecnologías de la información e inteligencia artificial, con énfasis en gestión, desarrollo y liderazgo de servicios tecnológicos. ",
+    }
 ]
