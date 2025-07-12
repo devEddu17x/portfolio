@@ -3,7 +3,6 @@
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { navItems } from "@/lib/data"
-import { ThemeToggle } from "@/components/ThemeToggle"
 
 interface HeaderProps {
     activeSection: string
@@ -50,8 +49,6 @@ export function Header({
                 </nav>
 
                 <div className="flex items-center gap-2">
-                    <ThemeToggle />
-
                     <Button
                         variant="ghost"
                         size="icon"
