@@ -5,14 +5,26 @@ import { useState, useEffect } from "react"
 export function usePortfolio() {
   const [activeSection, setActiveSection] = useState("home")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [darkMode, setDarkMode] = useState(true)
+  
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme')
+      if (savedTheme) {
+        return savedTheme === 'dark'
+      }
+      return true
+    }
+    return true
+  })
 
   // Cambiar tema claro/oscuro
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark")
+      localStorage.setItem('theme', 'dark')
     } else {
       document.documentElement.classList.remove("dark")
+      localStorage.setItem('theme', 'light')
     }
   }, [darkMode])
 
