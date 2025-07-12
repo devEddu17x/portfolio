@@ -1,21 +1,18 @@
 "use client"
 
-import { Sun, Moon, Menu, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { navItems } from "@/lib/data"
+import { ThemeToggle } from "@/components/ThemeToggle"
 
 interface HeaderProps {
     activeSection: string
-    darkMode: boolean
-    setDarkMode: (darkMode: boolean) => void
     mobileMenuOpen: boolean
     setMobileMenuOpen: (open: boolean) => void
 }
 
 export function Header({
     activeSection,
-    darkMode,
-    setDarkMode,
     mobileMenuOpen,
     setMobileMenuOpen
 }: HeaderProps) {
@@ -53,9 +50,7 @@ export function Header({
                 </nav>
 
                 <div className="flex items-center gap-2">
-                    <Button variant="ghost" size="icon" onClick={() => setDarkMode(!darkMode)} className="rounded-full">
-                        {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-                    </Button>
+                    <ThemeToggle />
 
                     <Button
                         variant="ghost"
