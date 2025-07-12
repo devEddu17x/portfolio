@@ -40,15 +40,15 @@ export function AboutSection() {
                         <div className="space-y-4">
                             <div className="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-sm text-center">
                                 <div className="text-3xl font-bold text-teal-500 dark:text-teal-400 mb-1">3+</div>
-                                <div className="text-gray-600 dark:text-gray-300">Años de experiencia</div>
+                                <div className="text-gray-600 dark:text-gray-300">Lorem ipsum dolor</div>
                             </div>
                             <div className="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-sm text-center">
                                 <div className="text-3xl font-bold text-indigo-500 dark:text-indigo-400 mb-1">15+</div>
-                                <div className="text-gray-600 dark:text-gray-300">Proyectos completados</div>
+                                <div className="text-gray-600 dark:text-gray-300">Lorem ipsum dolor</div>
                             </div>
                             <div className="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-sm text-center">
                                 <div className="text-3xl font-bold text-orange-500 dark:text-orange-400 mb-1">5+</div>
-                                <div className="text-gray-600 dark:text-gray-300">Tecnologías dominadas</div>
+                                <div className="text-gray-600 dark:text-gray-300">Lorem ipsum dolor</div>
                             </div>
                         </div>
                     </div>
