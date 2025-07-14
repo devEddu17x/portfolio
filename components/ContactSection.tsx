@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Mail, Github, Linkedin, Code, Send, Loader2 } from "lucide-react"
+import { Mail, Github, Linkedin, Send, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -106,18 +106,14 @@ export function ContactSection() {
                                         <span>linkedin.com/in/eduardodevts</span>
                                     </a>
                                 </div>
-
-                                <div className="absolute bottom-8 left-8 right-8 opacity-10">
-                                    <Code size={180} />
-                                </div>
                             </div>
 
                             <div className="md:col-span-3 p-8">
                                 <form onSubmit={handleSubmit} className="space-y-6">
                                     {submitStatus && (
                                         <div className={`p-4 rounded-md ${submitStatus.type === 'success'
-                                                ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-300 border border-green-200 dark:border-green-800'
-                                                : 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-300 border border-red-200 dark:border-red-800'
+                                            ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-300 border border-green-200 dark:border-green-800'
+                                            : 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-300 border border-red-200 dark:border-red-800'
                                             }`}>
                                             {submitStatus.message}
                                         </div>

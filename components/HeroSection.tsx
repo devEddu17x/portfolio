@@ -13,7 +13,7 @@ export function HeroSection() {
     }
 
     return (
-        <section id="home" className="min-h-screen flex items-center py-20">
+        <section id="home" className="min-h-screen flex items-center py-20 relative">
             <div className="container mx-auto px-4">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div className="order-2 md:order-1">
@@ -82,8 +82,12 @@ export function HeroSection() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div>                </div>
+            </div>
+
+            {/* Elementos decorativos <> */}
+            <div className="absolute bottom-20 left-16 md:left-32 opacity-25 text-8xl md:text-9xl lg:text-[10rem] font-mono text-teal-500 select-none pointer-events-none">
+                &lt;&gt;
             </div>
         </section>
     )
