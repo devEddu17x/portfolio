@@ -86,7 +86,7 @@ export function HeroSection() {
             </div>
 
             {/* Elementos decorativos <> */}
-            <div className="absolute bottom-20 left-16 md:left-32 opacity-25 text-8xl md:text-9xl lg:text-[10rem] font-mono text-teal-500 select-none pointer-events-none">
+            <div className="absolute bottom-44 right-8 md:bottom-20 md:left-32 md:right-auto opacity-25 text-8xl md:text-9xl lg:text-[10rem] font-mono text-teal-500 select-none pointer-events-none">
                 &lt;&gt;
             </div>
         </section>
