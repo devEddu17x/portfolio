@@ -72,7 +72,7 @@ export function HeroSection() {
                             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-gradient-to-br from-teal-500 to-indigo-500 p-1">
                                 <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-gray-900">
                                     <img
-                                        src="/me.png"
+                                        src="/me.webp"
                                         alt="Eduardo Díaz - Desarrollador Backend"
                                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                                         onError={(e) => {
