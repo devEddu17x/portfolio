@@ -18,24 +18,29 @@ export default function Portfolio() {
   } = usePortfolio()
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-[#0f172a] text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
-      <Header
-        activeSection={activeSection}
-      />
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-purple-900/30 text-gray-100 font-sans">
 
-      <main className="pt-16 pb-16 md:pb-0">
-        <HeroSection />
-        <AboutSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <EducationSection />
-        <ContactSection />
-      </main>
+      {/* Contenido principal */}
+      <div className="relative z-10">
+        <Header
+          activeSection={activeSection}
+        />
 
-      <Footer />
+        <main className="pt-16 pb-16 md:pb-0">
+          <HeroSection />
+          <AboutSection />
+          <SkillsSection />
+          <ProjectsSection />
+          <EducationSection />
+          <ContactSection />
+        </main>
 
-      {/* Mobile Bottom Navigation */}
-      <MobileBottomNav activeSection={activeSection} />
+        <Footer />
+
+        {/* Mobile Bottom Navigation */}
+        <MobileBottomNav activeSection={activeSection} />
+      </div>
     </div>
+
   )
 }
