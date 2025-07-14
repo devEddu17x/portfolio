@@ -53,15 +53,6 @@ export function ContactSection() {
     }
     return (
         <section id="contact" className="py-20 relative">
-            {/* Decorative symbols - Mobile (right side) */}
-            <div className="absolute top-20 right-4 text-6xl text-teal-500/20 dark:text-teal-400/20 font-mono select-none pointer-events-none md:hidden">
-                {"<>"}
-            </div>
-
-            {/* Decorative symbols - Desktop (left side) */}
-            <div className="hidden md:block absolute top-32 left-8 text-8xl text-teal-500/20 dark:text-teal-400/20 font-mono select-none pointer-events-none">
-                {"<>"}
-            </div>
 
             <div className="container mx-auto px-4">
                 <div className="max-w-3xl mx-auto text-center mb-16">
