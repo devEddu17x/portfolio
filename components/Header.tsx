@@ -1,20 +1,13 @@
 "use client"
 
-import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { navItems } from "@/lib/data"
 
 interface HeaderProps {
     activeSection: string
-    mobileMenuOpen: boolean
-    setMobileMenuOpen: (open: boolean) => void
 }
 
-export function Header({
-    activeSection,
-    mobileMenuOpen,
-    setMobileMenuOpen
-}: HeaderProps) {
+export function Header({ activeSection }: HeaderProps) {
     const scrollToContact = () => {
         const contactSection = document.getElementById('contact')
         if (contactSection) {
@@ -29,7 +22,7 @@ export function Header({
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-indigo-500 flex items-center justify-center text-white font-bold">
                         E
                     </div>
-                    <span className="font-bold text-xl hidden sm:block">Eddu</span>
+                    <span className="font-bold text-xl">Eddu</span>
                 </div>
 
                 {/* Desktop Navigation */}
@@ -48,23 +41,13 @@ export function Header({
                     ))}
                 </nav>
 
-                <div className="flex items-center gap-2">
-                    <Button
-                        variant="ghost"
-                        size="icon"
-                        className="md:hidden rounded-full"
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    >
-                        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                    </Button>
-
-                    <Button
-                        onClick={scrollToContact}
-                        className="hidden md:flex bg-gradient-to-r from-teal-500 to-indigo-500 hover:from-teal-600 hover:to-indigo-600 text-white border-0"
-                    >
-                        Contactar
-                    </Button>
-                </div>
+                {/* Desktop Contact Button */}
+                <Button
+                    onClick={scrollToContact}
+                    className="hidden md:flex bg-gradient-to-r from-teal-500 to-indigo-500 hover:from-teal-600 hover:to-indigo-600 text-white border-0"
+                >
+                    Contactar
+                </Button>
             </div>
         </header>
     )

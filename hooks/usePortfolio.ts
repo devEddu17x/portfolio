@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 
 export function usePortfolio() {
   const [activeSection, setActiveSection] = useState("home")
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   // Cambiar sección activa basado en scroll
   useEffect(() => {
@@ -29,7 +28,5 @@ export function usePortfolio() {
   return {
     activeSection,
     setActiveSection,
-    mobileMenuOpen,
-    setMobileMenuOpen,
   }
 }

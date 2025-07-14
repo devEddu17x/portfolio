@@ -2,7 +2,7 @@
 
 import { usePortfolio } from "@/hooks/usePortfolio"
 import { Header } from "@/components/Header"
-import { MobileMenu } from "@/components/MobileMenu"
+import { MobileBottomNav } from "@/components/MobileBottomNav"
 import { HeroSection } from "@/components/HeroSection"
 import { AboutSection } from "@/components/AboutSection"
 import { SkillsSection } from "@/components/SkillsSection"
@@ -14,24 +14,16 @@ import { Footer } from "@/components/Footer"
 export default function Portfolio() {
   const {
     activeSection,
-    mobileMenuOpen,
-    setMobileMenuOpen,
+    setActiveSection,
   } = usePortfolio()
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#0f172a] text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
       <Header
         activeSection={activeSection}
-        mobileMenuOpen={mobileMenuOpen}
-        setMobileMenuOpen={setMobileMenuOpen}
       />
 
-      <MobileMenu
-        mobileMenuOpen={mobileMenuOpen}
-        setMobileMenuOpen={setMobileMenuOpen}
-      />
-
-      <main className="pt-16">
+      <main className="pt-16 pb-16 md:pb-0">
         <HeroSection />
         <AboutSection />
         <SkillsSection />
@@ -41,6 +33,9 @@ export default function Portfolio() {
       </main>
 
       <Footer />
+
+      {/* Mobile Bottom Navigation */}
+      <MobileBottomNav activeSection={activeSection} />
     </div>
   )
 }
