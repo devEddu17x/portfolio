@@ -19,7 +19,7 @@ export function Header({ activeSection }: HeaderProps) {
         <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#0f172a]/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
             <div className="container mx-auto px-4 flex justify-between items-center h-16">
                 <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 overflow-hidden">
+                    <div className="w-10 h-10 overflow-hidden group relative">
                         <img
                             src="/arch.webp"
                             alt="Arch Linux Logo"

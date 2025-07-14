@@ -26,8 +26,11 @@ export function HeroSection() {
                                 Eddu
                             </span>
                         </h1>
-                        <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                        <p className="text-xl text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                             Especializado en crear APIs robustas y sistemas escalables con NestJS.
+                        </p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400 italic mb-8">
+                            I use Arch btw
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <Button
