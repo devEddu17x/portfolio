@@ -8,8 +8,12 @@ export function Footer() {
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     <div className="flex items-center gap-2 mb-4 md:mb-0">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-indigo-500 flex items-center justify-center text-white font-bold text-xs">
-                            TN
+                        <div className="w-10 h-10 overflow-hidden group relative">
+                            <img
+                                src="/arch.webp"
+                                alt="Arch Linux Logo"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                         <span className="font-bold">Eddu</span>
                     </div>
