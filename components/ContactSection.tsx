@@ -76,13 +76,13 @@ export function ContactSection() {
 
                                 <div className="space-y-6">
                                     <a
-                                        href="mailto:eduarjma@gmail.com"
+                                        href="mailto:contact@edducode.me"
                                         className="flex items-center gap-4 hover:bg-white/10 p-2 rounded-lg transition-colors"
                                     >
                                         <div className="p-2 rounded-full bg-white/20">
                                             <Mail size={20} />
                                         </div>
-                                        <span>eduarjma@gmail.com</span>
+                                        <span>contact@edducode.me</span>
                                     </a>
                                     <a
                                         href="https://github.com/devEddu17x"
