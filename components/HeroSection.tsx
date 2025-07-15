@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 
@@ -38,6 +38,20 @@ export function HeroSection() {
                                 className="bg-gradient-to-r from-teal-500 to-indigo-500 hover:from-teal-600 hover:to-indigo-600 text-white border-0"
                             >
                                 Ver proyectos <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                            <Button
+                                asChild
+                                variant="outline"
+                                className="bg-gray-50 dark:bg-gray-800 border-gray-300 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-900 hover:scale-105 transition-all duration-200"
+                            >
+                                <a
+                                    href="/documents/CV.pdf"
+                                    download="Eduardo-Mamani-Azabache-CV.pdf"
+                                    className="flex items-center"
+                                >
+                                    <Download className="mr-2 h-4 w-4" />
+                                    Descargar CV
+                                </a>
                             </Button>
                         </div>
 
