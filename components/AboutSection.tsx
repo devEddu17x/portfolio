@@ -39,7 +39,7 @@ export function AboutSection() {
 
                         <div className="space-y-4">
                             <div className="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-sm text-center">
-                                <div className="text-3xl font-bold text-teal-500 dark:text-teal-400 mb-1">2+</div>
+                                <div className="text-3xl font-bold text-teal-500 dark:text-teal-400 mb-1">3+</div>
                                 <div className="text-gray-600 dark:text-gray-300">Años programando</div>
                             </div>
                             <div className="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-sm text-center">
