@@ -45,12 +45,13 @@ export function HeroSection() {
                                 className="bg-gray-50 dark:bg-gray-800 border-gray-300 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-900 hover:scale-105 transition-all duration-200"
                             >
                                 <a
-                                    href="/documents/CV.pdf"
-                                    download="Eduardo-Mamani-Azabache-CV.pdf"
+                                    href="https://cdn.edducode.me/CV.pdf"
+                                    target="_blank" rel="noopener noreferrer"
+                                    download="CV.pdf"
                                     className="flex items-center"
                                 >
                                     <Download className="mr-2 h-4 w-4" />
-                                    Descargar CV
+                                    Ver CV
                                 </a>
                             </Button>
                         </div>
