@@ -33,7 +33,7 @@ export function LanguageSelector() {
                 <Button
                     variant="outline"
                     size="sm"
-                    className="hidden md:flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    className="flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                 >
                     <Globe size={16} className="text-gray-600 dark:text-gray-400" />
                     <span className="text-sm font-medium">{currentLang.short}</span>

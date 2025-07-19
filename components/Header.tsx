@@ -61,6 +61,11 @@ export function Header({ activeSection }: HeaderProps) {
                         {hero.contactButton}
                     </Button>
                 </div>
+
+                {/* Mobile Language Selector */}
+                <div className="md:hidden">
+                    <LanguageSelector />
+                </div>
             </div>
         </header>
     )
