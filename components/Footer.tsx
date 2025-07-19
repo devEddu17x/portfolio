@@ -1,8 +1,12 @@
 "use client"
 
 import { Github, Linkedin, Mail } from "lucide-react"
+import { getPortfolioData } from "@/lib/data"
 
 export function Footer() {
+    const data = getPortfolioData("es")
+    const { footer } = data
+
     return (
         <footer className="py-8 border-t border-gray-200 dark:border-gray-800">
             <div className="container mx-auto px-4">
@@ -15,16 +19,16 @@ export function Footer() {
                                 className="w-full h-full object-cover"
                             />
                         </div>
-                        <span className="font-bold">Eddu</span>
+                        <span className="font-bold">{footer.name}</span>
                     </div>
 
                     <div className="text-gray-500 dark:text-gray-400 text-sm">
-                        © {new Date().getFullYear()} Eddu. Todos los derechos reservados.
+                        © {new Date().getFullYear()} {footer.name}. {footer.copyright}
                     </div>
 
                     <div className="flex gap-4 mt-4 md:mt-0">
                         <a
-                            href="https://github.com/devEddu17x"
+                            href={footer.socialLinks.github}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-gray-500 dark:text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
@@ -32,7 +36,7 @@ export function Footer() {
                             <Github size={18} />
                         </a>
                         <a
-                            href="https://linkedin.com/in/eduardodevts"
+                            href={footer.socialLinks.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-gray-500 dark:text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
@@ -40,7 +44,7 @@ export function Footer() {
                             <Linkedin size={18} />
                         </a>
                         <a
-                            href="mailto:contact@edducode.me"
+                            href={footer.socialLinks.email}
                             className="text-gray-500 dark:text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
                         >
                             <Mail size={18} />

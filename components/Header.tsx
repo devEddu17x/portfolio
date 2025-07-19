@@ -1,13 +1,16 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { navItems } from "@/lib/data"
+import { getPortfolioData } from "@/lib/data"
 
 interface HeaderProps {
     activeSection: string
 }
 
 export function Header({ activeSection }: HeaderProps) {
+    const data = getPortfolioData("es")
+    const { navItems, hero } = data
+
     const scrollToContact = () => {
         const contactSection = document.getElementById('contact')
         if (contactSection) {
@@ -50,7 +53,7 @@ export function Header({ activeSection }: HeaderProps) {
                     onClick={scrollToContact}
                     className="hidden md:flex bg-gradient-to-r from-teal-500 to-indigo-500 hover:from-teal-600 hover:to-indigo-600 text-white border-0"
                 >
-                    Contactar
+                    {hero.contactButton}
                 </Button>
             </div>
         </header>

@@ -42,6 +42,7 @@ export interface HeroSection {
     archComment: string
     viewProjectsButton: string
     downloadCvButton: string
+    contactButton: string
     socialLinks: {
         github: string
         linkedin: string

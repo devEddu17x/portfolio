@@ -5,8 +5,12 @@ import { Mail, Github, Linkedin, Send, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { getPortfolioData } from "@/lib/data"
 
 export function ContactSection() {
+    const data = getPortfolioData("es")
+    const { contact } = data
+
     const [formData, setFormData] = useState({
         nombre: '',
         email: '',
@@ -40,13 +44,13 @@ export function ContactSection() {
             const result = await response.json()
 
             if (response.ok) {
-                setSubmitStatus({ type: 'success', message: 'Mensaje enviado correctamente!' })
+                setSubmitStatus({ type: 'success', message: contact.messages.success })
                 setFormData({ nombre: '', email: '', asunto: '', mensaje: '' })
             } else {
-                setSubmitStatus({ type: 'error', message: result.error || 'Error al enviar el mensaje' })
+                setSubmitStatus({ type: 'error', message: result.error || contact.messages.error })
             }
         } catch (error) {
-            setSubmitStatus({ type: 'error', message: 'Error de conexión' })
+            setSubmitStatus({ type: 'error', message: contact.messages.connectionError })
         } finally {
             setIsSubmitting(false)
         }
@@ -57,11 +61,11 @@ export function ContactSection() {
             <div className="container mx-auto px-4">
                 <div className="max-w-3xl mx-auto text-center mb-16">
                     <Badge className="mb-4 bg-teal-500/10 text-teal-500 dark:bg-teal-400/10 dark:text-teal-400">
-                        Contacto
+                        {contact.badge}
                     </Badge>
-                    <h2 className="text-3xl font-bold mb-4">¿Hablamos?</h2>
+                    <h2 className="text-3xl font-bold mb-4">{contact.title}</h2>
                     <p className="text-gray-600 dark:text-gray-300">
-                        ¿Interesado en trabajar juntos o tienes alguna pregunta?
+                        {contact.subtitle}
                     </p>
                 </div>
 
@@ -69,9 +73,9 @@ export function ContactSection() {
                     <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 overflow-hidden">
                         <div className="grid md:grid-cols-5">
                             <div className="md:col-span-2 bg-gradient-to-br from-teal-500 to-indigo-500 p-8 text-white">
-                                <h3 className="text-2xl font-semibold mb-6">Información de contacto</h3>
+                                <h3 className="text-2xl font-semibold mb-6">{contact.contactInfo.title}</h3>
                                 <p className="mb-8 opacity-90">
-                                    Completa el formulario y me pondré en contacto contigo lo antes posible.
+                                    {contact.contactInfo.description}
                                 </p>
 
                                 <div className="space-y-6">
@@ -126,7 +130,7 @@ export function ContactSection() {
                                                 htmlFor="nombre"
                                                 className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300"
                                             >
-                                                Nombre
+                                                {contact.form.nameLabel}
                                             </label>
                                             <input
                                                 type="text"
@@ -134,6 +138,7 @@ export function ContactSection() {
                                                 name="nombre"
                                                 value={formData.nombre}
                                                 onChange={handleChange}
+                                                placeholder={contact.form.namePlaceholder}
                                                 required
                                                 className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400"
                                             />
@@ -143,7 +148,7 @@ export function ContactSection() {
                                                 htmlFor="email"
                                                 className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300"
                                             >
-                                                Email
+                                                {contact.form.emailLabel}
                                             </label>
                                             <input
                                                 type="email"
@@ -151,6 +156,7 @@ export function ContactSection() {
                                                 name="email"
                                                 value={formData.email}
                                                 onChange={handleChange}
+                                                placeholder={contact.form.emailPlaceholder}
                                                 required
                                                 className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400"
                                             />
@@ -161,7 +167,7 @@ export function ContactSection() {
                                             htmlFor="asunto"
                                             className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300"
                                         >
-                                            Asunto
+                                            {contact.form.subjectLabel}
                                         </label>
                                         <input
                                             type="text"
@@ -169,6 +175,7 @@ export function ContactSection() {
                                             name="asunto"
                                             value={formData.asunto}
                                             onChange={handleChange}
+                                            placeholder={contact.form.subjectPlaceholder}
                                             required
                                             className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400"
                                         />
@@ -178,7 +185,7 @@ export function ContactSection() {
                                             htmlFor="mensaje"
                                             className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300"
                                         >
-                                            Mensaje
+                                            {contact.form.messageLabel}
                                         </label>
                                         <textarea
                                             id="mensaje"
@@ -186,6 +193,7 @@ export function ContactSection() {
                                             rows={5}
                                             value={formData.mensaje}
                                             onChange={handleChange}
+                                            placeholder={contact.form.messagePlaceholder}
                                             required
                                             className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-teal-400"
                                         />
@@ -198,12 +206,12 @@ export function ContactSection() {
                                         {isSubmitting ? (
                                             <>
                                                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                                Enviando...
+                                                {contact.form.submittingButton}
                                             </>
                                         ) : (
                                             <>
                                                 <Send className="mr-2 h-4 w-4" />
-                                                Enviar mensaje
+                                                {contact.form.submitButton}
                                             </>
                                         )}
                                     </Button>

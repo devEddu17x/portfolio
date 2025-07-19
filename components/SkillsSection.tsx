@@ -2,19 +2,22 @@
 
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { skills } from "@/lib/data"
+import { getPortfolioData } from "@/lib/data"
 
 export function SkillsSection() {
+    const data = getPortfolioData("es")
+    const { skills, skillsSection } = data
+
     return (
         <section id="skills" className="py-20">
             <div className="container mx-auto px-4">
                 <div className="max-w-3xl mx-auto text-center mb-16">
                     <Badge className="mb-4 bg-teal-500/10 text-teal-500 dark:bg-teal-400/10 dark:text-teal-400">
-                        Habilidades
+                        {skillsSection.badge}
                     </Badge>
-                    <h2 className="text-3xl font-bold mb-4">Mis habilidades técnicas</h2>
+                    <h2 className="text-3xl font-bold mb-4">{skillsSection.title}</h2>
                     <p className="text-gray-600 dark:text-gray-300">
-                        Tecnologías y herramientas que domino para crear soluciones robustas y escalables.
+                        {skillsSection.subtitle}
                     </p>
                 </div>
 

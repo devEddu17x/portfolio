@@ -3,8 +3,12 @@
 import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { getPortfolioData } from "@/lib/data"
 
 export function HeroSection() {
+    const data = getPortfolioData("es")
+    const { hero } = data
+
     const scrollToProjects = () => {
         const projectsSection = document.getElementById('projects')
         if (projectsSection) {
@@ -18,26 +22,26 @@ export function HeroSection() {
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div className="order-2 md:order-1">
                         <Badge className="mb-4 bg-teal-500/10 text-teal-500 dark:bg-teal-400/10 dark:text-teal-400 hover:bg-teal-500/20 dark:hover:bg-teal-400/20">
-                            Desarrollador Backend
+                            {hero.badge}
                         </Badge>
                         <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                            Hola, soy{" "}
+                            {hero.greeting}{" "}
                             <span className="bg-gradient-to-r from-teal-500 to-indigo-500 bg-clip-text text-transparent">
-                                Eddu
+                                {hero.name}
                             </span>
                         </h1>
                         <p className="text-xl text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                            Especializado en crear APIs robustas y sistemas escalables con NestJS.
+                            {hero.description}
                         </p>
                         <p className="text-sm text-gray-500 dark:text-gray-400 italic mb-8">
-                            I use Arch btw
+                            {hero.archComment}
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <Button
                                 onClick={scrollToProjects}
                                 className="bg-gradient-to-r from-teal-500 to-indigo-500 hover:from-teal-600 hover:to-indigo-600 text-white border-0"
                             >
-                                Ver proyectos <ArrowRight className="ml-2 h-4 w-4" />
+                                {hero.viewProjectsButton} <ArrowRight className="ml-2 h-4 w-4" />
                             </Button>
                             <Button
                                 asChild
@@ -51,28 +55,28 @@ export function HeroSection() {
                                     className="flex items-center"
                                 >
                                     <Download className="mr-2 h-4 w-4" />
-                                    Ver CV
+                                    {hero.downloadCvButton}
                                 </a>
                             </Button>
                         </div>
 
                         <div className="mt-12 flex gap-4">
                             <a
-                                href="https://github.com/devEddu17x"
+                                href={hero.socialLinks.github}
                                 target="_blank" rel="noopener noreferrer"
                                 className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
                             >
                                 <Github size={20} />
                             </a>
                             <a
-                                href="https://www.linkedin.com/in/eduardodevts/"
+                                href={hero.socialLinks.linkedin}
                                 target="_blank" rel="noopener noreferrer"
                                 className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
                             >
                                 <Linkedin size={20} />
                             </a>
                             <a
-                                href="mailto:contact@edducode.me?subject=Contacto%20desde%20Portfolio"
+                                href={hero.socialLinks.email}
                                 target="_blank" rel="noopener noreferrer"
                                 className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
                             >

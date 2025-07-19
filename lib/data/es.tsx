@@ -119,6 +119,7 @@ export const esData: PortfolioData = {
         archComment: "I use Arch btw",
         viewProjectsButton: "Ver proyectos",
         downloadCvButton: "Ver CV",
+        contactButton: "Contactar",
         socialLinks: {
             github: "https://github.com/devEddu17x",
             linkedin: "https://linkedin.com/in/eduardodevts",
