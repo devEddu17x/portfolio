@@ -1,10 +1,12 @@
 import { PortfolioData } from "./types"
 import { esData } from "./es"
+import { enData } from "./en"
 
-export type Language = "es"
+export type Language = "es" | "en"
 
 const dataMap: Record<Language, PortfolioData> = {
     es: esData,
+    en: enData,
 }
 
 export function getPortfolioData(language: Language = "es"): PortfolioData {
