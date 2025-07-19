@@ -6,9 +6,11 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { getPortfolioData } from "@/lib/data"
+import { useLanguage } from "@/hooks/useLanguageContext"
 
 export function ContactSection() {
-    const data = getPortfolioData("es")
+    const { language } = useLanguage()
+    const data = getPortfolioData(language)
     const { contact } = data
 
     const [formData, setFormData] = useState({

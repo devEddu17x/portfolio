@@ -1,13 +1,15 @@
 "use client"
 
 import { getPortfolioData } from "@/lib/data"
+import { useLanguage } from "@/hooks/useLanguageContext"
 
 interface MobileBottomNavProps {
     activeSection: string
 }
 
 export function MobileBottomNav({ activeSection }: MobileBottomNavProps) {
-    const data = getPortfolioData("es")
+    const { language } = useLanguage()
+    const data = getPortfolioData(language)
     const { navItems } = data
 
     return (

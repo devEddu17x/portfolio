@@ -4,9 +4,11 @@ import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { getPortfolioData } from "@/lib/data"
+import { useLanguage } from "@/hooks/useLanguageContext"
 
 export function HeroSection() {
-    const data = getPortfolioData("es")
+    const { language } = useLanguage()
+    const data = getPortfolioData(language)
     const { hero } = data
 
     const scrollToProjects = () => {

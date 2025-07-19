@@ -3,9 +3,11 @@
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { getPortfolioData } from "@/lib/data"
+import { useLanguage } from "@/hooks/useLanguageContext"
 
 export function SkillsSection() {
-    const data = getPortfolioData("es")
+    const { language } = useLanguage()
+    const data = getPortfolioData(language)
     const { skills, skillsSection } = data
 
     return (

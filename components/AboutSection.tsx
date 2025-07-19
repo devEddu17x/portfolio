@@ -2,9 +2,11 @@
 
 import { Badge } from "@/components/ui/badge"
 import { getPortfolioData } from "@/lib/data"
+import { useLanguage } from "@/hooks/useLanguageContext"
 
 export function AboutSection() {
-    const data = getPortfolioData("es")
+    const { language } = useLanguage()
+    const data = getPortfolioData(language)
     const { about } = data
 
     return (

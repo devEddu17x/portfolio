@@ -2,13 +2,16 @@
 
 import { Button } from "@/components/ui/button"
 import { getPortfolioData } from "@/lib/data"
+import { useLanguage } from "@/hooks/useLanguageContext"
+import { LanguageSelector } from "@/components/LanguageSelector"
 
 interface HeaderProps {
     activeSection: string
 }
 
 export function Header({ activeSection }: HeaderProps) {
-    const data = getPortfolioData("es")
+    const { language } = useLanguage()
+    const data = getPortfolioData(language)
     const { navItems, hero } = data
 
     const scrollToContact = () => {
@@ -48,13 +51,16 @@ export function Header({ activeSection }: HeaderProps) {
                     ))}
                 </nav>
 
-                {/* Desktop Contact Button */}
-                <Button
-                    onClick={scrollToContact}
-                    className="hidden md:flex bg-gradient-to-r from-teal-500 to-indigo-500 hover:from-teal-600 hover:to-indigo-600 text-white border-0"
-                >
-                    {hero.contactButton}
-                </Button>
+                {/* Desktop Actions */}
+                <div className="hidden md:flex items-center gap-3">
+                    <LanguageSelector />
+                    <Button
+                        onClick={scrollToContact}
+                        className="bg-gradient-to-r from-teal-500 to-indigo-500 hover:from-teal-600 hover:to-indigo-600 text-white border-0"
+                    >
+                        {hero.contactButton}
+                    </Button>
+                </div>
             </div>
         </header>
     )

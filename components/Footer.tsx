@@ -2,9 +2,11 @@
 
 import { Github, Linkedin, Mail } from "lucide-react"
 import { getPortfolioData } from "@/lib/data"
+import { useLanguage } from "@/hooks/useLanguageContext"
 
 export function Footer() {
-    const data = getPortfolioData("es")
+    const { language } = useLanguage()
+    const data = getPortfolioData(language)
     const { footer } = data
 
     return (
