@@ -72,7 +72,7 @@ export function HeroSection() {
                                 <Linkedin size={20} />
                             </a>
                             <a
-                                href="mailto:eduarjma@gmail.com?subject=Contacto%20desde%20Portfolio"
+                                href="mailto:contact@edducode.me?subject=Contacto%20desde%20Portfolio"
                                 target="_blank" rel="noopener noreferrer"
                                 className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
                             >
