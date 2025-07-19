@@ -19,10 +19,18 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     const [language, setLanguageState] = useState<Language>("es")
 
     useEffect(() => {
-        // Cargar idioma guardado del localStorage
         const savedLanguage = localStorage.getItem("portfolio-language") as Language
         if (savedLanguage && (savedLanguage === "es" || savedLanguage === "en")) {
             setLanguageState(savedLanguage)
+        } else {
+            const browserLanguage = navigator.language.toLowerCase()
+            if (browserLanguage.startsWith("en")) {
+                setLanguageState("en")
+                localStorage.setItem("portfolio-language", "en")
+            }
+            else {
+                localStorage.setItem("portfolio-language", "es")
+            }
         }
     }, [])
 
