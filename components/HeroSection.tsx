@@ -109,8 +109,8 @@ export function HeroSection() {
                     </div>                </div>
             </div>
 
-            {/* Elementos decorativos <> */}
-            <div className="absolute bottom-44 right-8 md:bottom-20 md:left-32 md:right-auto opacity-25 text-8xl md:text-9xl lg:text-[10rem] font-mono text-teal-500 select-none pointer-events-none">
+            {/* Elementos decorativos <> - Solo visible en desktop */}
+            <div className="hidden md:block absolute bottom-44 right-8 md:bottom-20 md:left-32 md:right-auto opacity-25 text-8xl md:text-9xl lg:text-[10rem] font-mono text-teal-500 select-none pointer-events-none">
                 &lt;&gt;
             </div>
         </section>
