@@ -11,6 +11,14 @@ export function HeroSection() {
     const data = getPortfolioData(language)
     const { hero } = data
 
+    // URL dinámica del CV según el idioma
+    const cvUrl = language === "es"
+        ? "https://cdn.edducode.me/CV-ES.pdf"
+        : "https://cdn.edducode.me/CV-En.pdf"
+
+    // Nombre del archivo para download
+    const cvFileName = language === "es" ? "CV-ES.pdf" : "CV-En.pdf"
+
     const scrollToProjects = () => {
         const projectsSection = document.getElementById('projects')
         if (projectsSection) {
@@ -51,9 +59,9 @@ export function HeroSection() {
                                 className="bg-gray-50 dark:bg-gray-800 border-gray-300 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-900 hover:scale-105 transition-all duration-200"
                             >
                                 <a
-                                    href="https://cdn.edducode.me/CV.pdf"
+                                    href={cvUrl}
                                     target="_blank" rel="noopener noreferrer"
-                                    download="CV.pdf"
+                                    download={cvFileName}
                                     className="flex items-center"
                                 >
                                     <Download className="mr-2 h-4 w-4" />
