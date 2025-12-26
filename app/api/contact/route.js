@@ -1,55 +1,59 @@
 export async function POST(request) {
   try {
     const { nombre, email, asunto, mensaje } = await request.json();
-    
-    // Validar que todos los campos estén presentes
+
     if (!nombre || !email || !asunto || !mensaje) {
       return Response.json(
-        { error: 'Todos los campos son requeridos' }, 
+        { error: "Todos los campos son requeridos" },
         { status: 400 }
       );
     }
-    
-    // Validar formato de email básico
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return Response.json(
-        { error: 'Formato de email inválido' }, 
+        { error: "Formato de email inválido" },
         { status: 400 }
       );
     }
-    
-    // Enviar al webhook
-    const response = await fetch(process.env.WEBHOOK_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Basic " + btoa(`${process.env.WEBHOOK_USERNAME}:${process.env.WEBHOOK_PASSWORD}`)
-      },
-      body: JSON.stringify({
-        nombre,
-        email,
-        asunto,
-        mensaje
-       })
-    });
-    
-    if (!response.ok) {
-      throw new Error(`Webhook response: ${response.status}`);
+
+    const token = process.env.TELEGRAM_TOKEN;
+    const chatId = process.env.TELEGRAM_CHAT_ID;
+
+    if (!token || !chatId) {
+      console.error("Telegram configuration is missing");
+      return Response.json(
+        { error: "Error inesperado, envia un correo a contact@edducode.me" },
+        { status: 500 }
+      );
     }
-    
-    const data = await response.json();
-    
-    return Response.json({ 
-      success: true, 
-      message: 'Mensaje enviado correctamente',
-      data 
+
+    const sendMessageResponse = await fetch(
+      `https://api.telegram.org/bot${token}/sendMessage`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: `🚀 Nuevo contacto del portafolio:\n\nDe: ${nombre}\nEmail: ${email}\nAsunto: ${asunto}\nMensaje: \n>>${mensaje}`,
+        }),
+      }
+    );
+
+    if (!sendMessageResponse.ok) {
+      const errorData = await sendMessageResponse.json();
+      console.error("Telegram API error:", errorData);
+      throw new Error("Telegram rejected the message");
+    }
+
+    return Response.json({
+      success: true,
+      message: "Mensaje enviado correctamente",
     });
-    
   } catch (error) {
-    console.error('Error sending contact message:', error);
+    console.error("Error sending contact message:", error);
     return Response.json(
-      { error: 'Error interno del servidor' }, 
+      { error: "Error interno del servidor" },
       { status: 500 }
     );
   }
